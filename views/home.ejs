@@ -1,0 +1,38 @@
+
+<%- include('partials/header') %>
+
+<section class="section-one">
+    <img id="kemik-img-small" class="kemik-img" src="./images/icons/kemik_img.png" alt="kemişko" height="100" width="100">
+    <div class="container-xl" id="first-part">
+      <div class="row justify-content-center">
+      <div class="col div1">
+        <h1 class="header-text">Kemik Society</h1>
+        <p class="text">Kemik society established in 2021 with a group of  student at METU. </p>
+      </div>
+      <div class="col">
+        <img class="kemik-img" id="kemik-img-big" src="./images/icons/kemik_img.png" alt="kemişko" height="300" width="300">
+      </div></div>
+    </div>
+  </section>
+
+  <!------------------- Section Two  -------------------->
+
+  <section id="society-members">
+    <h1>Society Members</h1>
+    <img src="images/icons/left.png" alt="left icon" height="50px" id="arrow-left">
+    <div class="card-menu">
+        <%  members.forEach(function(member,index){ %>
+      <div class="card text-center">
+        <img src="images/members/<%= member.imagePath  %>" class="card-img-top" height="200px" width="200px" alt="member_photo">
+        <div class="card-body">
+          <h5 class="card-title"><%= member.name %></h5>
+          <p class="card-text"><%= member.shortDes %></p>
+          <a href="/member/<%= index %>" class="btn btn-secondary">Read More</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <img src="images/icons/right.png" alt="left icon" height="50px" id="arrow-right">
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/index.js"></script>
